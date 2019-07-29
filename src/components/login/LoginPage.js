@@ -1,11 +1,16 @@
 import React from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import * as userActions from "../../redux/actions/loginActions";
+import { bindActionCreators } from "redux";
+import PropTypes from "prop-types";
+
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "demir.vahap@gmail.com",
-      password: "asd"
+      password: "asd",
+      user: []
     };
   }
 
@@ -22,11 +27,17 @@ class LoginPage extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
+    const { actions } = this.props;
 
     // stop here if form is invalid
     if (!(email && password)) {
       return;
     }
+
+    actions.login(email, password).catch(error => {
+      alert("Loading authors failed" + error);
+    });
+
     this.props.history.push("home/HomePage");
   };
 
@@ -65,4 +76,24 @@ class LoginPage extends React.Component {
   }
 }
 
-export default LoginPage;
+LoginPage.protoTypes;
+
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+    loading: state.apiCallsInProgress > 0
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      login: bindActionCreators(userActions.getUsers, dispatch)
+    }
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginPage);

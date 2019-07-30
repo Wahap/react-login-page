@@ -12,10 +12,8 @@ export function login(email, pass) {
     return userApi
       .getUsers()
       .then(users => {
-        const user =
-          users.find(user => user.email === email && user.password === pass) ||
-          null;
-        dispatch(loginSuccess(user));
+        const usert = users.find(user => user.email === email) || null;
+        dispatch(loginSuccess(usert));
       })
       .catch(error => {
         dispatch(apiCallError(error));

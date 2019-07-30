@@ -3,12 +3,14 @@ import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import * as userActions from "../../redux/actions/loginActions";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { toast } from "react-toastify";
 
 class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "demir.vahap@gmail.com",
+      email: "Sincere@april.biz",
       password: "asd",
       user: []
     };
@@ -34,11 +36,15 @@ class LoginPage extends React.Component {
       return;
     }
 
-    actions.login(email, password).catch(error => {
-      alert("Loading authors failed" + error);
-    });
-
-    this.props.history.push("home/HomePage");
+    try {
+      actions.login(email, password).catch(error => {
+        alert("Loging failed" + error);
+      });
+      toast.success("Cool");
+      this.props.history.push("home/HomePage");
+    } catch (error) {
+      alert("Loging1 failed" + error);
+    }
   };
 
   render() {
@@ -76,7 +82,9 @@ class LoginPage extends React.Component {
   }
 }
 
-LoginPage.protoTypes;
+LoginPage.protoTypes = {
+  loading: PropTypes.bool.isRequired
+};
 
 function mapStateToProps(state) {
   return {
@@ -88,7 +96,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      login: bindActionCreators(userActions.getUsers, dispatch)
+      login: bindActionCreators(userActions.login, dispatch)
     }
   };
 }

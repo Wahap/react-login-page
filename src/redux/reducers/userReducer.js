@@ -4,7 +4,7 @@ import initialState from "./initialState";
 export default function userReducer(state = initialState.users, action) {
   switch (action.type) {
     case types.LOGIN_SUCCESS:
-      return action.user;
+      return action.users;
     default:
       return state;
   }

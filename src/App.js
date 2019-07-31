@@ -7,6 +7,7 @@ import HomePage from "./components/home/HomePage";
 import LoginPage from "./components/login/LoginPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import UserPage from "./components/users/UserPage";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={LoginPage} />
         {<Route path="/home" component={HomePage} />}
-        {/* <Route path="/courses" component={CoursesPage} /> */}
+        <Route path="/users" component={UserPage} />
         {/* <Route path="/course/:slug" component={ManageCoursePage} /> */}
         {/* <Route path="/course" component={ManageCoursePage} /> */}
         {/* <Route component={PageNotFound} /> */}

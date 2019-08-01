@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-import * as userActions from "../../redux/actions/loginActions";
+import * as loginActions from "../../redux/actions/loginActions";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -11,8 +11,7 @@ class LoginPage extends React.Component {
     super(props);
     this.state = {
       email: "Sincere@april.biz",
-      password: "asd",
-      user: []
+      password: "asd"
     };
   }
 
@@ -29,7 +28,7 @@ class LoginPage extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
-    const { actions } = this.props;
+    const { actions, user } = this.props;
 
     // stop here if form is invalid
     if (!(email && password)) {
@@ -37,11 +36,19 @@ class LoginPage extends React.Component {
     }
 
     try {
-      actions.login(email, password).catch(error => {
-        alert("Loging failed" + error);
-      });
-      toast.success("Cool");
-      this.props.history.push("home/HomePage");
+      actions
+        .login(email, password)
+        .then(res => {
+          if (user) {
+            this.props.history.push("home");
+            toast.success("Cool");
+          } else {
+            toast.error("UserName or Password are not correct!");
+          }
+        })
+        .catch(error => {
+          alert("Loging failed" + error);
+        });
     } catch (error) {
       alert("Loging1 failed" + error);
     }
@@ -83,12 +90,13 @@ class LoginPage extends React.Component {
 }
 
 LoginPage.protoTypes = {
+  user: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    user: state.user,
+    user: state.currentUser,
     loading: state.apiCallsInProgress > 0
   };
 }
@@ -96,7 +104,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      login: bindActionCreators(userActions.login, dispatch)
+      login: bindActionCreators(loginActions.login, dispatch)
     }
   };
 }

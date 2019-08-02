@@ -5,8 +5,8 @@ import Navbar from "react-bootstrap/Navbar";
 import * as loginActions from "../../redux/actions/loginActions";
 import { bindActionCreators } from "redux";
 import { toast } from "react-toastify";
-import { withRouter } from "react-router-dom";
 import { compose } from "redux";
+import { withRouter,Link } from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,14 +18,24 @@ class Header extends React.Component {
     const { actions } = this.props;
     actions.logout();
 
-    this.props.history.push("/");
+    this.props.history.push("login");
   };
   render() {
     const isLoggedIn = this.props.user && this.props.user.name;
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">My App</Navbar.Brand>
-        {isLoggedIn ? <Navbar.Brand href="#users">Users</Navbar.Brand> : ""}
+        <Navbar.Brand > <Link  to="home"  >
+          Home Page
+        </Link></Navbar.Brand>
+        <Navbar.Brand > <Link  to="login"  >
+          Login
+        </Link></Navbar.Brand>
+        {isLoggedIn ? 
+       <Navbar.Brand > <Link className="link" to="users"  >
+          Users
+        </Link>
+        </Navbar.Brand>
+         : ""}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
@@ -56,6 +66,7 @@ function mapDispatchToProps(dispatch) {
     }
   };
 }
+
 
 export default compose(
   withRouter,

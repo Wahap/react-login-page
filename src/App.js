@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/common/Header";
 import { Route, Switch } from "react-router-dom";
@@ -16,12 +15,13 @@ function App() {
       <Switch>
         <Route exact path="/" component={LoginPage} />
         {<Route path="/home" component={HomePage} />}
-        <Route path="/users" component={UserPage} />
+       { <Route path="/users" component={UserPage} />}
+       { <Route path="/login" component={LoginPage} />}
         {/* <Route path="/course/:slug" component={ManageCoursePage} /> */}
         {/* <Route path="/course" component={ManageCoursePage} /> */}
         {/* <Route component={PageNotFound} /> */}
       </Switch>
-      <ToastContainer autoClose={3000} hideProgressBar />
+      <ToastContainer  autoClose={3000} position="top-center" hideProgressBar />
     </div>
   );
 }

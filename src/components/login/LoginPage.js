@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
       actions
         .login(email, password)
         .then(res => {
-          if (user) {
+          if(this.props.user){
             this.props.history.push("home");
             toast.success("Cool");
           } else {

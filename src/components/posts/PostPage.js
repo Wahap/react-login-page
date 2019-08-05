@@ -1,35 +1,23 @@
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import React from "react";
-import * as userActions from "../../redux/actions/userActions";
+import * as postActions from "../../redux/actions/postActions";
 import * as apiActions from "../../redux/actions/apiStatusActions";
 import { bindActionCreators } from "redux";
 import Spinner from "../common/Spinner.js";
-class UserPage extends React.Component {
+class PostPage extends React.Component {
   constructor(props) {
     super(props);
-    const { actions } = this.props;
+    this.state = {};
   }
 
   componentDidMount() {
     const { actions } = this.props;
 
-    actions.getUsers().catch(error => {
-      alert("Loading users failed" + error);
+    actions.getPosts().catch(error => {
+      alert("Loading posts failed" + error);
     });
   }
-
-  startApiCall = () => {
-    try {
-      this.props.actions.beginApiCall();
-    } catch (error) {}
-  };
-
-  stopApiCall = () => {
-    try {
-      this.props.actions.stopApiCall();
-    } catch (error) {}
-  };
 
   render() {
     return (
@@ -58,7 +46,7 @@ class UserPage extends React.Component {
         ) : (
           <div>
             <p>{this.props.wahap}++</p>
-            {this.props.users.map(user => (
+            {this.props.posts.map(user => (
               <p>{user.email}</p>
             ))}
             test
@@ -71,19 +59,31 @@ class UserPage extends React.Component {
             </button>
           </div>
         )}
+
+        <div>
+          <p>{this.props.wahap}++</p>
+
+          <button
+            style={{ marginBottom: 20 }}
+            className="btn btn-primary add-course"
+            onClick={() => this.startApiCall()}
+          >
+            Add Course
+          </button>
+        </div>
       </>
     );
   }
 }
 
-UserPage.propTypes = {
-  users: PropTypes.array.isRequired,
+PostPage.propTypes = {
+  posts: PropTypes.array.isRequired,
   wahap: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    users: state.users,
+    posts: state.posts,
     loading: state.apiCallsInProgress > 0,
     wahap: "test" + state.apiCallsInProgress + 2
   };
@@ -92,7 +92,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      getUsers: bindActionCreators(userActions.getUsers, dispatch),
+      getPosts: bindActionCreators(postActions.getPosts, dispatch),
       beginApiCall: bindActionCreators(apiActions.beginApiCall, dispatch),
       stopApiCall: bindActionCreators(apiActions.stopApiCall, dispatch)
     }
@@ -101,4 +101,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserPage);
+)(PostPage);

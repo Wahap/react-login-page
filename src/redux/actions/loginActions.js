@@ -12,6 +12,7 @@ export function logOutSuccess() {
 
 export function logOut() {
   return function(dispatch) {
+    dispatch(beginApiCall());
     dispatch(logOutSuccess());
   };
 }

@@ -23,15 +23,15 @@ class Header extends React.Component {
   render() {
     const isLoggedIn = this.props.user && this.props.user.name;
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand > <Link  to="home"  >
+      <Navbar collapseOnSelect expand="lg" bg="dark"  variant="dark">
+        <Navbar.Brand > <Link  to="home" className="link" >
           Home Page
         </Link></Navbar.Brand>
-        <Navbar.Brand > <Link  to="login"  >
+        <Navbar.Brand > <Link  to="login" className="link"  >
           Login
         </Link></Navbar.Brand>
         {isLoggedIn ? 
-       <Navbar.Brand > <Link className="link" to="users"  >
+       <Navbar.Brand > <Link className="link linkTest" to="users"  >
           Users
         </Link>
         </Navbar.Brand>

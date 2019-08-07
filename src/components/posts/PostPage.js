@@ -5,72 +5,47 @@ import * as postActions from "../../redux/actions/postActions";
 import * as apiActions from "../../redux/actions/apiStatusActions";
 import { bindActionCreators } from "redux";
 import Spinner from "../common/Spinner.js";
+import CardFunc from "../common/CardFunction.js";
+
 class PostPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { posts: [] };
   }
 
   componentDidMount() {
-    const { actions } = this.props;
-
-    actions.getPosts().catch(error => {
-      alert("Loading posts failed" + error);
-    });
+    const { actions, posts } = this.props;
+    if (posts.length === 0) {
+      actions.getPosts().catch(error => {
+        alert("Loading posts failed" + error);
+      });
+    }
+    this.setState({ posts });
   }
+
+  startApiCall = () => {
+    try {
+      this.props.actions.beginApiCall();
+    } catch (error) {}
+  };
+
+  stopApiCall = () => {
+    try {
+      this.props.actions.stopApiCall();
+    } catch (error) {}
+  };
 
   render() {
     return (
       <>
         {this.props.loading ? (
-          <>
-            <Spinner />
-            <div>
-              {" "}
-              <button
-                style={{ marginBottom: 20 }}
-                className="btn btn-primary add-course"
-                onClick={() => this.stopApiCall()}
-              >
-                stop
-              </button>
-              <button
-                style={{ marginBottom: 20 }}
-                className="btn btn-primary add-course"
-                onClick={() => this.startApiCall()}
-              >
-                arttirt
-              </button>
-            </div>
-          </>
+          <Spinner />
         ) : (
-          <div>
-            <p>{this.props.wahap}++</p>
-            {this.props.posts.map(user => (
-              <p>{user.email}</p>
-            ))}
-            test
-            <button
-              style={{ marginBottom: 20 }}
-              className="btn btn-primary add-course"
-              onClick={() => this.startApiCall()}
-            >
-              Add Course
-            </button>
-          </div>
+          <>
+            <CardFunc data={this.props.posts} onClick={this.stopApiCall} />
+            Test
+          </>
         )}
-
-        <div>
-          <p>{this.props.wahap}++</p>
-
-          <button
-            style={{ marginBottom: 20 }}
-            className="btn btn-primary add-course"
-            onClick={() => this.startApiCall()}
-          >
-            Add Course
-          </button>
-        </div>
       </>
     );
   }

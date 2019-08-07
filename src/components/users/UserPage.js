@@ -12,11 +12,13 @@ class UserPage extends React.Component {
   }
 
   componentDidMount() {
-    const { actions } = this.props;
+    const { actions, users } = this.props;
 
-    actions.getUsers().catch(error => {
-      alert("Loading users failed" + error);
-    });
+    if (users.length === 0) {
+      actions.getUsers().catch(error => {
+        alert("Loading users failed" + error);
+      });
+    }
   }
 
   startApiCall = () => {

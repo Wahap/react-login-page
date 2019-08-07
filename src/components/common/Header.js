@@ -26,7 +26,7 @@ class Header extends React.Component {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>
           {" "}
-          <Link to="home">Home Page</Link>
+          <Link to="home">Home Page -{this.props.wahap}</Link>
         </Navbar.Brand>
         <Navbar.Brand>
           {" "}
@@ -66,12 +66,14 @@ class Header extends React.Component {
 
 Header.protoTypes = {
   user: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
+  wahap: PropTypes.bool.isRequired
 };
 function mapStateToProps(state) {
   return {
     user: state.currentUser,
-    loading: state.apiCallsInProgress > 0
+    loading: state.apiCallsInProgress > 0,
+    wahap: state.apiCallsInProgress
   };
 }
 

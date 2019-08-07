@@ -1,18 +1,18 @@
 import * as types from "./actionTypes";
-import * as userApi from "../../api/userApi";
+import * as postApi from "../../api/postsApi";
 import { beginApiCall, apiCallError } from "./apiStatusActions";
 
-export function getUsersSuccess(users) {
-  return { type: types.GET_USERS_SUCCESS, users };
+export function getPostsSuccess(posts) {
+  return { type: types.GET_POSTS_SUCCESS, posts };
 }
 
-export function getUsers() {
+export function getPosts() {
   return function(dispatch) {
     dispatch(beginApiCall());
-    return userApi
-      .getUsers()
-      .then(users => {
-        dispatch(getUsersSuccess(users.data));
+    return postApi
+      .getPosts()
+      .then(posts => {
+        dispatch(getPostsSuccess(posts.data));
       })
       .catch(error => {
         dispatch(apiCallError(error));

@@ -5,7 +5,6 @@ import * as userActions from "../../redux/actions/userActions";
 import * as apiActions from "../../redux/actions/apiStatusActions";
 import { bindActionCreators } from "redux";
 import Spinner from "../common/Spinner.js";
-import { beginApiCall } from "../../redux/actions/apiStatusActions";
 class UserPage extends React.Component {
   constructor(props) {
     super(props);
@@ -13,11 +12,13 @@ class UserPage extends React.Component {
   }
 
   componentDidMount() {
-    const { actions } = this.props;
+    const { actions, users } = this.props;
 
-    actions.getUsers().catch(error => {
-      alert("Loading users failed" + error);
-    });
+    if (users.length === 0) {
+      actions.getUsers().catch(error => {
+        alert("Loading users failed" + error);
+      });
+    }
   }
 
   startApiCall = () => {
@@ -78,7 +79,8 @@ class UserPage extends React.Component {
 }
 
 UserPage.propTypes = {
-  users: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired,
+  wahap: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state) {

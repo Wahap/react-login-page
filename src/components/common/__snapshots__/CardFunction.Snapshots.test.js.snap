@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sets submit button label 'Saving...' when saving is false 1`] = `
+<div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Securing React Apps with Auth0
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          React: The Big Picture
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Creating Reusable React Components
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Building a JavaScript Development Environment
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Building Applications with React and Redux
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Building Applications in React and Flux
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Clean Code: Writing Code for Humans
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Architecting Applications for the Real World
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Becoming an Outlier: Reprogramming the Developer Mind
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Web Component Fundamentals
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+</div>
+`;
+
+exports[`sets submit button label 'Saving...' when saving is true 1`] = `
+<div>
+  <div>
+    <div
+      className="card-deck"
+    >
+      <div
+        className="card bg-primary text-white"
+        style={
+          Object {
+            "width": "18rem",
+          }
+        }
+      >
+        <div
+          className="card-header"
+        >
+          Wahap
+           
+        </div>
+        <div
+          className="card-body"
+        >
+          <div
+            className="card-title h5"
+          >
+            Primary Card Title
+          </div>
+          <p
+            className="card-text"
+          />
+          <button
+            className="btn btn-primary add-course"
+            onClick={[Function]}
+            style={
+              Object {
+                "marginBottom": 20,
+              }
+            }
+          >
+            stop
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+</div>
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sets submit button label 'Saving...' when saving is true 1`] = `
+<div
+  className="loader"
+>
+  Loading...
+</div>
+`;

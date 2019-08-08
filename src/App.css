@@ -36,9 +36,18 @@ body {
   font-family: "Varela Round";
 }
 /*=== 2. Anchor Link ===*/
-a,link {
-  color: #aaaaaa;
+a {
+  color: #aaaaaa ;
   transition: all ease-in-out 200ms;
+}
+.link {
+  color: #ffffff !important;
+  transition: all ease-in-out 200ms;
+}
+
+.linkTest {
+  
+  font-family: "Varela Round";
 }
 
 a:hover {

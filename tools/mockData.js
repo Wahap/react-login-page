@@ -82,9 +82,9 @@ const postArray = [
 ];
 
 const authors = [
-  { id: 1, name: "Cory House" },
-  { id: 2, name: "Scott Allen" },
-  { id: 3, name: "Dan Wahlin" }
+  { id: 1, name: "Cory House", email: "email@email.com" },
+  { id: 2, name: "Scott Allen", email: "email2@email.com" },
+  { id: 3, name: "Dan Wahlin", email: "emai3l@email.com" }
 ];
 
 const newCourse = {

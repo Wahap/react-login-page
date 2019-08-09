@@ -1,10 +1,9 @@
 import React from "react";
 import App from "./App";
+import ReactDOM from "react-dom";
+import configureStore from "../src/redux/configureStore";
+const store = configureStore();
 import Enzyme, { shallow, mount } from "enzyme";
-
-import Adapter from "enzyme-adapter-react-16";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("renders without crashing", () => {
   test("render", () => {

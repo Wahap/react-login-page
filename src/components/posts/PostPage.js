@@ -53,14 +53,14 @@ class PostPage extends React.Component {
 
 PostPage.propTypes = {
   posts: PropTypes.array.isRequired,
-  wahap: PropTypes.bool.isRequired
+  wahap: PropTypes.number.isRequired
 };
 
 function mapStateToProps(state) {
   return {
     posts: state.posts,
     loading: state.apiCallsInProgress > 0,
-    wahap: "test" + state.apiCallsInProgress + 2
+    wahap: state.apiCallsInProgress
   };
 }
 

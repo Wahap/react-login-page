@@ -6,7 +6,7 @@ import * as loginActions from "../../redux/actions/loginActions";
 import { bindActionCreators } from "redux";
 import { toast } from "react-toastify";
 import { compose } from "redux";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, Link, BrowserRouter } from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -23,43 +23,55 @@ class Header extends React.Component {
   render() {
     const isLoggedIn = this.props.user && this.props.user.name;
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand>
-          {" "}
-          <Link to="home">Home Page -{this.props.wahap}</Link>
-        </Navbar.Brand>
-        <Navbar.Brand>
-          {" "}
-          <Link to="login">Login</Link>
-        </Navbar.Brand>
-        {isLoggedIn ? (
+      <BrowserRouter>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand>
             {" "}
-            <Link className="link" to="users">
-              Users
-            </Link>
+            <Link to="home">Home Page -{this.props.wahap}</Link>
           </Navbar.Brand>
-        ) : (
-          ""
-        )}
-        {isLoggedIn ? (
           <Navbar.Brand>
             {" "}
-            <Link className="link" to="posts">
-              Posts
-            </Link>
+            <Link to="login">Login</Link>
           </Navbar.Brand>
-        ) : (
-          ""
-        )}
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            {isLoggedIn ? "Signed in as: " + this.props.user.name : ""}
-            {isLoggedIn ? <a onClick={() => this.logOut()}>Log Out</a> : ""}
-          </Navbar.Text>
-        </Navbar.Collapse>
-      </Navbar>
+          {isLoggedIn ? (
+            <Navbar.Brand>
+              {" "}
+              <Link className="link" to="users">
+                Users
+              </Link>
+            </Navbar.Brand>
+          ) : (
+            ""
+          )}
+          {isLoggedIn ? (
+            <Navbar.Brand>
+              {" "}
+              <Link className="link" to="posts">
+                Posts
+              </Link>
+            </Navbar.Brand>
+          ) : (
+            ""
+          )}
+          {isLoggedIn ? (
+            <Navbar.Brand>
+              {" "}
+              <Link className="link" to="posts">
+                Posts
+              </Link>
+            </Navbar.Brand>
+          ) : (
+            ""
+          )}
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text>
+              {isLoggedIn ? "Signed in as: " + this.props.user.name : ""}
+              {isLoggedIn ? <a onClick={() => this.logOut()}>Log Out</a> : ""}
+            </Navbar.Text>
+          </Navbar.Collapse>
+        </Navbar>
+      </BrowserRouter>
     );
   }
 }

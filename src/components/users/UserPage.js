@@ -87,7 +87,7 @@ function mapStateToProps(state) {
   return {
     users: state.users,
     loading: state.apiCallsInProgress > 0,
-    wahap: "test" + state.apiCallsInProgress + 2
+    wahap: state.apiCallsInProgress
   };
 }
 
